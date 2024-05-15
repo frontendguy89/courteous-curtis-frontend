@@ -16,6 +16,11 @@
   }
 }
 
+html {
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.83rem + 0.8500000000000001vw, 1.85rem);
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,6 +29,67 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left:auto;
+  margin-right:auto;
+  max-width: 40rem;
+}
+
+p {
+  max-width:40rem;
+  margin: auto;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+blockquote::before {
+  content:
+}
+
+blockquote {
+  font-size:1.1rem;
+  font-style: italic;
+}
+
+blockquote p {
+  border-left: 6px solid #333;
+  padding-left:1rem;
+}
+
+blockquote cite {
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-style: normal;
+  font-weight: bold;
+}
+
+article > :first-of-type::first-letter:is(p) {
+  margin-right:0.5rem;
+  -webkit-initial-letter: 3;
+  initial-letter: 3;
+}
+
+footer {
+  box-shadow: inset 2px 2px 6px 4px black;
+}
+
+@media screen and (min-width:1280px) {
+  blockquote {
+    margin-left:-2.5rem
+  }
+}
+
+.logotext a:hover {
+  text-decoration: none;
 }
 
 @layer utilities {

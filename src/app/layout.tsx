@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import Header from "./components/Header";
+import { Libre_Baskerville } from "next/font/google";
 import "./globals.css";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
-const inter = Inter({ subsets: ["latin"] });
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`bg-parchment ${libreBaskerville.className} bg-cover bg-center text-[#333] border-[#333] border-4 m-2 min-h-screen`}
+      >
+        <Header />
+        <Nav />
+        <div className="py-2 px-6">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
