@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Bevan } from "next/font/google";
 
 const bevan = Bevan({
@@ -12,12 +13,12 @@ export default function Footer() {
       <h2 className={`${bevan.className} text-2xl`}>SITEMAP</h2>
       <div className="lg:flex max-w-[40rem] m-auto justify-between">
         <ul className="mb-6">
-          <li>HOME</li>
-          <li>ARTICLES</li>
+          <li><Link href="/">HOME</Link></li>
+          <li><Link href="/articles">ARTICLES</Link></li>
           <li>VOX</li>
           <li>HIRE</li>
           <li>ABOUT</li>
-          <li>CONTACT</li>
+          <li><Link href="/contact">CONTACT</Link></li>
         </ul>
         <ul className="mb-6">
           <li>SITEMAP</li>

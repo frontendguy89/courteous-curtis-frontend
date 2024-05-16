@@ -1,4 +1,5 @@
 import { Bevan } from "next/font/google";
+import Breadcrumb from "../components/Breadcrumb";
 
 const bevan = Bevan({
   subsets: ["latin"],
@@ -8,7 +9,15 @@ const bevan = Bevan({
 export default function Page() {
   return (
     <>
-      <h1 className={`${bevan.className} text-3xl text-center`}>
+     <Breadcrumb
+        homeElement={"Home"}
+        separator={<span> / </span>}
+        activeClasses="ml-2"
+        containerClasses="flex py-5"
+        listClasses="hover:underline mr-2 font-bold"
+        capitalizeLinks
+      />
+      <h1 className={`${bevan.className} text-3xl text-center uppercase`}>
         Penny for your thoughts?
       </h1>
       <p>
@@ -17,9 +26,21 @@ export default function Page() {
         dignissimos numquam esse iure neque quae perspiciatis dolore sed
         cupiditate?
       </p>
-      <form className="max-w-[40rem] m-auto flex flex-col">
+      <form className="max-w-[40rem] m-auto flex flex-col gap-2 mb-6">
         <label className="font-bold">Name:</label>
-        <input className="border-2 border-[#333] px-2 py-1" type="text" />
+        <input className="border-2 border-[#333] px-2 py-1 placeholder:text-[#666]" type="text" placeholder="E.A Poe" />
+        <label className="font-bold">Email:</label>
+        <input className="border-2 border-[#333] px-2 py-1 placeholder:text-[#666]" type="email" placeholder="theraven@houseofusher.com" />
+        <label className="font-bold">Tel:</label>
+        <input className="border-2 border-[#333] px-2 py-1 placeholder:text-[#666]" type="tel" />
+        <label className="font-bold">Website:</label>
+        <input className="border-2 border-[#333] px-2 py-1 placeholder:text-[#666]" type="url" placeholder="https://houseofusher.com" />
+        <label className="font-bold">Message:</label>
+        <textarea className="border-2 border-[#333] px-2 py-1 placeholder:text-[#666]" placeholder="And the Masque of the Red Death held sway over all&hellip;"></textarea>
+        <div className="flex gap-2">
+          <button className="bg-[#222] hover:bg-[#333] px-2 py-2 text-yellow-50" value="submit">SUBMIT</button>
+          <button className="bg-transparent hover:bg-yellow-50 border-2 border-[#333] px-2 py-2" value="reset">RESET</button>
+        </div>
       </form>
     </>
   );
