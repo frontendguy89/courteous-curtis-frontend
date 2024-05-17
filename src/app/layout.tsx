@@ -28,8 +28,8 @@ export default function RootLayout({
         className={`bg-parchment dark:bg-blackboard ${libreBaskerville.className} bg-repeat bg-center text-[#333] dark:text-yellow-100 border-[#333] dark:border-yellow-100 border-4 m-2 min-h-screen transition-colors duration-150`}
       >
         <ThemeProvider attribute="class">
-          <Header />
-          <Nav />
+          <Header handleToggle={undefined} />
+          <Nav isNav={undefined} />
           <div className="py-2 px-6">{children}</div>
           <Footer />
         </ThemeProvider>

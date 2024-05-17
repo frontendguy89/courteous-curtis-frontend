@@ -13,7 +13,7 @@ const bevan = Bevan({
   weight: "400",
 });
 
-export default function Header({ headerImage, handleToggle }) {
+export default function Header({ handleToggle }: {handleToggle: any }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
