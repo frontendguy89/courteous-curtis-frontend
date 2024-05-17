@@ -1,10 +1,15 @@
-import Image from "next/image";
+import { Bevan } from "next/font/google";
 import Breadcrumb from "../components/Breadcrumb";
+
+const bevan = Bevan({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Page() {
   return (
     <>
-     <Breadcrumb
+      <Breadcrumb
         homeElement={"Home"}
         separator={<span> / </span>}
         activeClasses="ml-2"
@@ -12,14 +17,9 @@ export default function Page() {
         listClasses="hover:underline mr-2 font-bold"
         capitalizeLinks
       />
-      <Image
-        src="/anatomical_heart.svg"
-        alt="skull"
-        width="160"
-        height="160"
-        className="text-center m-auto"
-      />
-      <h1 className="text-4xl">&#9891;</h1>
+      <h1 className={`${bevan.className} text-3xl text-center uppercase`}>
+        I like the sound of my own voice&hellip;
+      </h1>
     </>
   );
 }

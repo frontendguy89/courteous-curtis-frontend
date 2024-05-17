@@ -9,7 +9,7 @@ const bevan = Bevan({
 
 export default function Footer() {
   return (
-    <footer className="bg-wood bg-center bg-cover py-6 px-6 max-w-6xl m-auto text-yellow-100">
+    <footer className="bg-wood bg-repeat bg-center py-6 px-6 max-w-6xl m-auto text-yellow-100">
       <h2 className={`${bevan.className} text-2xl`}>SITEMAP</h2>
       <div className="lg:flex max-w-[40rem] m-auto justify-between">
         <ul className="mb-6">

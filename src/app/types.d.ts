@@ -1,6 +1,6 @@
 import { Document } from '@contentful/rich-text-types';
 
-export type BlogItem = {
+export type BlogItem = any; {
     fields: {
         title: string;
         slug: string;
@@ -8,7 +8,7 @@ export type BlogItem = {
         content: Document;
     }
 }
-export type BlogItems = ReadonlyArray<BlogItem>;
+export type BlogItems = any;
 
 export type BlogQueryResult = {
     items: BlogItems;

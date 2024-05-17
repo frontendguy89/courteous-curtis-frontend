@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { Bevan } from "next/font/google";
 
 const bevan = Bevan({
@@ -7,12 +8,14 @@ const bevan = Bevan({
 });
 
 export default function Home() {
+
   return (
     <main>
       <article>
         <h1 className={`text-center text-3xl uppercase ${bevan.className}`}>
-          Heading
+          I ramble; You listen and read&hellip;
         </h1>
+        <hr className="border-t-[#333] border-2 border-dotted mb-6" />
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis
           voluptatibus consectetur quos voluptatem repellendus pariatur
@@ -43,6 +46,7 @@ export default function Home() {
             <cite>&mdash; Chris Wilcocks</cite>
           </p>
         </blockquote>
+        <hr className="border-t-[#333] border-2 border-dotted mt-6" />
       </article>
     </main>
   );

@@ -1,10 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Bevan } from "next/font/google";
-import { BlogItem } from "@/app/types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BlogQueryResult } from "@/app/types";
 import { createClient } from "contentful";
 import Breadcrumb from "../components/Breadcrumb";
-import PolaroidCard from "../components/PolaroidCard";
 
 const bevan = Bevan({
   subsets: ["latin"],
@@ -16,32 +15,13 @@ const client = createClient({
   accessToken: process.env.ACCESS_TOKEN,
 });
 
-export async function generateStaticParams() {
-  const queryOptions = {
-    content_type: "blog",
-    select: "fields.slug",
-  };
-
-  const articles = await client.getEntries(queryOptions);
-  return articles.items.map((article) => ({
-    slug: article.fields.slug,
-  }));
-}
-
-const fetchBlogPost = async (slug: string): Promise<BlogItem> => {
-  const queryOptions = {
-    content_type: "blog",
-    "fields.slug[match]": slug,
-  };
-  const queryResult = await client.getEntries(queryOptions);
-  return queryResult.items[0];
+const getBlogEntries = async (): Promise<BlogQueryResult> => {
+  const entries = await client.getEntries({ content_type: "blog" });
+  return entries;
 };
 
-export default async function BlogPage(props: BlogPageProps) {
-  const { params } = props;
-  const { slug } = params;
-  const article = await fetchBlogPost(slug);
-  const { title, date, content } = article.fields;
+export default async function BlogPage() {
+  const blogEntries = await getBlogEntries();
 
   return (
     <>
@@ -55,26 +35,43 @@ export default async function BlogPage(props: BlogPageProps) {
       />
       <main className="min-h-screen flex justify-center">
         <div className="max-w-2xl">
-          <Link className="group" href={`/articles/${slug}`}>
-            <h1
-              className={`font-extrabold text-3xl mb-2 uppercase ${bevan.className}`}
-            >
-              {title}
-            </h1>
-          </Link>
-          <p className="mb-6 text-[#666] ">
-            Posted on{" "}
-            {new Date(date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
-          <article
-            className={`[&>h2]:font-extrabold [&>h2]:${bevan.className}`}
+          <Image
+            src="/simplebraindiagram.svg"
+            alt="skull"
+            width="160"
+            height="160"
+            className="text-center m-auto"
+          />
+          <h1
+            className={`font-extrabold text-3xl text-center mb-2 uppercase ${bevan.className}`}
           >
-            {documentToReactComponents(content)}
-          </article>
+            Read at your own risk&hellip;
+          </h1>
+          <p>
+            Presented here are my articles, short stories and musings. Peruse at
+            your own risk - sanity is for the weak
+          </p>
+          <hr className="border-t-[#333] dark:border-yellow-100 border-2 border-dotted" />
+          {blogEntries.items.map((singlePost) => {
+            const { slug, title, date } = singlePost.fields;
+            return (
+              <div key={slug} className="flex fle-row items-center justify-center gap-6">
+                <Link href={`/articles/${slug}`}>
+                  <h2 className={`text-3xl text-center ${bevan.className} uppercase`}>{title}</h2>
+                  <span className="block text-center italic">
+                    Posted on{" "}
+                    {new Date(date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                  <br  />
+                </Link>
+              </div>
+            );
+          })}
+          <hr className="border-t-[#333] dark:border-yellow-100 border-2 border-dotted" />
         </div>
       </main>
     </>

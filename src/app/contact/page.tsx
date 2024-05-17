@@ -20,6 +20,7 @@ export default function Page() {
       <h1 className={`${bevan.className} text-3xl text-center uppercase`}>
         Penny for your thoughts?
       </h1>
+      <hr className="border-t-[#333] border-2 border-dotted mb-6" />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat nisi
         dignissimos illo facilis, in eaque modi quasi molestias? Non consectetur
@@ -42,6 +43,7 @@ export default function Page() {
           <button className="bg-transparent hover:bg-yellow-50 border-2 border-[#333] px-2 py-2" value="reset">RESET</button>
         </div>
       </form>
+      <hr className="border-t-[#333] border-2 border-dotted" />
     </>
   );
 }
