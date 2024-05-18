@@ -54,7 +54,7 @@ export default function Page() {
         <label className="font-bold">Message:</label>
         <textarea
           className="border-2 border-[#333] px-2 py-1 placeholder:text-[#333] bg-transparent"
-          placeholder="And the Masque of the Red Death held sway over all&hellip;"
+          placeholder="And the Masque of the Red Death held sway over all&hellip;" rows="3"
         ></textarea>
         <div className="flex gap-2">
           <button
