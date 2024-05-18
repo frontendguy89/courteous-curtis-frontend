@@ -37,7 +37,7 @@ export default function Header({ handleToggle }: { handleToggle: any }) {
         />
       </Link>
       <h1
-        className={`text-4xl ${bevan.className} uppercase border-t-4 border-[#333] dark:border-yellow-100 border-b-4 logotext`}
+        className={`text-4xl ${bevan.className} uppercase border-t-4 border-[#111] dark:border-yellow-100 border-b-4 logotext`}
       >
         <Link href="/">COURTEOUS CURTIS</Link>
       </h1>

@@ -13,12 +13,18 @@ export default function Footer() {
       <h2 className={`${bevan.className} text-2xl`}>SITEMAP</h2>
       <div className="lg:flex max-w-[40rem] m-auto justify-between">
         <ul className="mb-6">
-          <li><Link href="/">HOME</Link></li>
-          <li><Link href="/articles">ARTICLES</Link></li>
+          <li>
+            <Link href="/">HOME</Link>
+          </li>
+          <li>
+            <Link href="/articles">ARTICLES</Link>
+          </li>
           <li>VOX</li>
           <li>HIRE</li>
           <li>ABOUT</li>
-          <li><Link href="/contact">CONTACT</Link></li>
+          <li>
+            <Link href="/contact">CONTACT</Link>
+          </li>
         </ul>
         <ul className="mb-6">
           <li>SITEMAP</li>
@@ -38,12 +44,47 @@ export default function Footer() {
       </div>
       <hr className="mt-6 max-w-[40rem] m-auto border-t-2 border-yellow-100" />
       <div className="max-w-[40rem] m-auto flex justify-between py-2 gap-6">
-        <p className="text-sm">Copyright &copy; 2024 - Courteous Curtis. All Rights Reserved. Smithed by @frontendguy89</p>
+        <p className="text-sm">
+          Copyright &copy; 2024 - Courteous Curtis. All Rights Reserved. Smithed
+          by @frontendguy89
+        </p>
         <ul className="flex gap-2">
-            <li><Image src="/icons8-facebook-48.svg" alt="Facebook" height="48" width="48" className="bg-yellow-100" /></li>
-            <li><Image src="/icons8-instagram-48.svg" alt="Facebook" height="48" width="48" className="bg-yellow-100" /></li>
-            <li><Image src="/icons8-youtube-48.svg" alt="Facebook" height="48" width="48" className="bg-yellow-100" /></li>
-            <li><Image src="/icons8-tiktok-48.svg" alt="Facebook" height="48" width="48" className="bg-yellow-100" /></li>
+          <li>
+            <Image
+              src="/icons8-facebook-48.svg"
+              alt="Facebook"
+              height="48"
+              width="48"
+              className="bg-yellow-100"
+            />
+          </li>
+          <li>
+            <Image
+              src="/icons8-instagram-48.svg"
+              alt="Facebook"
+              height="48"
+              width="48"
+              className="bg-yellow-100"
+            />
+          </li>
+          <li>
+            <Image
+              src="/icons8-youtube-48.svg"
+              alt="Facebook"
+              height="48"
+              width="48"
+              className="bg-yellow-100"
+            />
+          </li>
+          <li>
+            <Image
+              src="/icons8-tiktok-48.svg"
+              alt="Facebook"
+              height="48"
+              width="48"
+              className="bg-yellow-100"
+            />
+          </li>
         </ul>
       </div>
     </footer>

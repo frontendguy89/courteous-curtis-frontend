@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-parchment dark:bg-blackboard ${libreBaskerville.className} bg-repeat bg-center text-[#333] dark:text-yellow-100 border-[#333] dark:border-yellow-100 border-4 m-2 min-h-screen transition-colors duration-150`}
+        className={`bg-parchment dark:bg-blackboard ${libreBaskerville.className} bg-repeat bg-center text-[#111] dark:text-yellow-100 border-[#333] dark:border-yellow-100 border-4 m-2 min-h-screen transition-colors duration-150`}
       >
         <ThemeProvider attribute="class">
           <Header handleToggle={undefined} />
