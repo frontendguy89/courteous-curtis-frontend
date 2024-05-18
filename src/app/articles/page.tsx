@@ -27,9 +27,9 @@ export default async function BlogPage() {
     <>
       <Breadcrumb
         homeElement={"Home"}
-        separator={<span> / </span>}
+        separator={<span> - </span>}
         activeClasses="ml-2"
-        containerClasses="flex py-5"
+        containerClasses="flex text-center items-center py-5"
         listClasses="hover:underline mr-2 font-bold"
         capitalizeLinks
       />

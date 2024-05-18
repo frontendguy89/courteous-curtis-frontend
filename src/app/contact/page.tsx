@@ -11,7 +11,7 @@ export default function Page() {
     <>
      <Breadcrumb
         homeElement={"Home"}
-        separator={<span> / </span>}
+        separator={<span> - </span>}
         activeClasses="ml-2"
         containerClasses="flex py-5"
         listClasses="hover:underline mr-2 font-bold"

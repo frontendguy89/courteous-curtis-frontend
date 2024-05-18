@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function Nav({ isNav }) {
+export default function Nav({isNav}) {
   return (
     <nav
-      className="max-w-6xl m-auto flex items-center justify-center text-center"
-      style={{ display: isNav ? "flex" : "none", opacity: isNav ? 1 : 0 }}
+      className="max-w-6xl m-auto flex items-center justify-center text-center bg-wood py-4 text-yellow-100"
+     
     >
       <ul className="flex flex-col lg:flex-row gap-2 lg:gap-6 uppercase font-bold">
         <li>

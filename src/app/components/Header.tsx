@@ -13,7 +13,7 @@ const bevan = Bevan({
   weight: "400",
 });
 
-export default function Header({ handleToggle }: {handleToggle: any }) {
+export default function Header({ handleToggle }: { handleToggle: any }) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -29,7 +29,7 @@ export default function Header({ handleToggle }: {handleToggle: any }) {
     <header className="px-6 py-6 max-w-6xl m-auto text-center ">
       <Link href="/" className="w-[160px] block m-auto">
         <Image
-          src={theme === 'dark' ? '/wilcocks_dark.svg' : '/wilcocks.svg'}
+          src={theme === "dark" ? "/wilcocks_dark.svg" : "/wilcocks.svg"}
           alt="skull"
           width="160"
           height="160"
