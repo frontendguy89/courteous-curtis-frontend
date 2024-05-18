@@ -79,9 +79,9 @@ export default async function BlogPage(props: BlogPageProps) {
               day: "numeric",
             })}
           </p>
-          <div className={`[&>p]:mb-8 [&>h2]:font-extrabold [&>h2]:text-center [&>h2]:uppercase`}>
+          <article className={`[&>p]:mb-8 [&>h2]:font-extrabold [&>h2]:text-center [&>h2]:uppercase`}>
             {documentToReactComponents(content, media)}
-          </div>
+          </article>
           <hr className="border-t-[#333] dark:border-yellow-100 border-2 border-dotted" />
         </div>
       </main>
