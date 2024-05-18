@@ -53,8 +53,8 @@ export default function Footer() {
             <Image
               src="/icons8-facebook-48.svg"
               alt="Facebook"
-              height="48"
-              width="48"
+              height="64"
+              width="64"
               className="bg-yellow-100"
             />
           </li>
@@ -62,8 +62,8 @@ export default function Footer() {
             <Image
               src="/icons8-instagram-48.svg"
               alt="Facebook"
-              height="48"
-              width="48"
+              height="64"
+              width="64"
               className="bg-yellow-100"
             />
           </li>
@@ -71,8 +71,8 @@ export default function Footer() {
             <Image
               src="/icons8-youtube-48.svg"
               alt="Facebook"
-              height="48"
-              width="48"
+              height="64"
+              width="64"
               className="bg-yellow-100"
             />
           </li>
@@ -80,8 +80,8 @@ export default function Footer() {
             <Image
               src="/icons8-tiktok-48.svg"
               alt="Facebook"
-              height="48"
-              width="48"
+              height="64"
+              width="64"
               className="bg-yellow-100"
             />
           </li>

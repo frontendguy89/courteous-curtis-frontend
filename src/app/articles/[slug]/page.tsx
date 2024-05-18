@@ -47,7 +47,7 @@ export default async function BlogPage(props: BlogPageProps) {
   const { params } = props;
   const { slug } = params;
   const article = await fetchBlogPost(slug);
-  const { title, date, content } = article.fields;
+  const { title, date, content, media } = article.fields;
 
   return (
     <>
@@ -80,7 +80,7 @@ export default async function BlogPage(props: BlogPageProps) {
             })}
           </p>
           <div className={`[&>p]:mb-8 [&>h2]:font-extrabold [&>h2]:text-center [&>h2]:uppercase`}>
-            {documentToReactComponents(content)}
+            {documentToReactComponents(content, media)}
           </div>
           <hr className="border-t-[#333] dark:border-yellow-100 border-2 border-dotted" />
         </div>
