@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Skull from "./components/anatomy/skull";
+import Skull from "./components/anatomy/Skull";
 import { Bevan } from "next/font/google";
 
 const bevan = Bevan({
