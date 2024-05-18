@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Skull from "./components/anatomy/skull";
 import { Bevan } from "next/font/google";
 
 const bevan = Bevan({
@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <main>
       <article>
+        <Skull />
         <h1 className={`text-center text-3xl uppercase ${bevan.className}`}>
           I ramble; You listen and read&hellip;
         </h1>
