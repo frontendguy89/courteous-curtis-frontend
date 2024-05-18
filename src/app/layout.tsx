@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "./components/Header";
 import { Libre_Baskerville } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import Template from "./template";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
@@ -28,10 +29,12 @@ export default function RootLayout({
         className={`bg-parchment dark:bg-blackboard ${libreBaskerville.className} bg-repeat bg-center text-[#111] dark:text-yellow-100 border-[#333] dark:border-yellow-100 border-4 m-2 min-h-screen transition-colors duration-150`}
       >
         <ThemeProvider attribute="class">
-          <Header handleToggle={undefined} />
-          <Nav isNav={undefined} />
-          <div className="py-2 px-6">{children}</div>
-          <Footer />
+          <Template>
+            <Header handleToggle={undefined} />
+            <Nav isNav={undefined} />
+            <div className="py-2 px-6">{children}</div>
+            <Footer />
+          </Template>
         </ThemeProvider>
       </body>
     </html>
