@@ -11,7 +11,6 @@ export default function Home() {
 
   return (
     <main>
-      <article>
         <Skull />
         <h1 className={`text-center text-3xl uppercase ${bevan.className}`}>
           I ramble; You listen and read&hellip;
@@ -48,7 +47,6 @@ export default function Home() {
           </p>
         </blockquote>
         <hr className="border-t-[#333] border-2 border-dotted mt-6" />
-      </article>
     </main>
   );
 }
