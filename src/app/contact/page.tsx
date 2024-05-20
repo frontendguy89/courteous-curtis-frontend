@@ -90,7 +90,7 @@ export default function Page() {
             type="tel"
             placeholder="+1(617)-555-1234"
           />
-          <label labelFor="Website" className="font-bold">
+          <label htmlFor="Website" className="font-bold">
             Website:
           </label>
           <Field
