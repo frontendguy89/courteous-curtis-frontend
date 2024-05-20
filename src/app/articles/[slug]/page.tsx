@@ -1,9 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Bevan } from "next/font/google";
 import { BlogItem, BlogQueryResult } from "@/app/types";
 import { createClient } from "contentful";
+import Template from "./template";
 import Breadcrumb from "@/app/components/Breadcrumb";
+import PolaroidCard from '@/app/components/PolaroidCard';
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const bevan = Bevan({
@@ -50,7 +51,7 @@ export default async function BlogPage(props: BlogPageProps) {
   const { title, date, content, media } = article.fields;
 
   return (
-    <>
+    <Template>
       <Breadcrumb
         homeElement={"Home"}
         separator={<span> - </span>}
@@ -61,13 +62,6 @@ export default async function BlogPage(props: BlogPageProps) {
       />
       <main className="min-h-screen flex justify-center">
         <div className="max-w-2xl">
-          <Image
-            src="/simplebraindiagram.svg"
-            alt="skull"
-            width="160"
-            height="160"
-            className="text-center m-auto mb-6"
-          />
           <hr className="border-t-[#333] dark:border-yellow-100 border-2 border-dotted" />
           <h1 className={`font-extrabold text-3xl mb-2 ${bevan.className} text-center`}>{title}</h1>
 
@@ -79,12 +73,13 @@ export default async function BlogPage(props: BlogPageProps) {
               day: "numeric",
             })}
           </p>
-          <article className={`[&>p]:mb-8 [&>h2]:font-extrabold [&>h2]:text-center [&>h2]:uppercase`}>
+          <PolaroidCard />
+          <article className={`[&>p]:mb-8 [&>h2]:font-extrabold [&>h2]:text-center [&>h2]:uppercase dropcap`}>
             {documentToReactComponents(content, media)}
           </article>
           <hr className="border-t-[#333] dark:border-yellow-100 border-2 border-dotted" />
         </div>
       </main>
-    </>
+    </Template>
   );
 }

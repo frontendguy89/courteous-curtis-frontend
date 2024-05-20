@@ -4,6 +4,7 @@ import { Bevan } from "next/font/google";
 import { BlogQueryResult } from "@/app/types";
 import { createClient } from "contentful";
 import Breadcrumb from "../components/Breadcrumb";
+import Brain from "../components/anatomy/Brain";
 
 const bevan = Bevan({
   subsets: ["latin"],
@@ -35,13 +36,7 @@ export default async function BlogPage() {
       />
       <main className="min-h-screen flex justify-center">
         <div className="max-w-2xl">
-          <Image
-            src="/simplebraindiagram.svg"
-            alt="skull"
-            width="160"
-            height="160"
-            className="text-center m-auto"
-          />
+          <Brain />
           <h1
             className={`font-extrabold text-3xl text-center mb-2 uppercase ${bevan.className}`}
           >

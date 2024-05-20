@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Breadcrumb from "../components/Breadcrumb";
+import Heart from "../components/anatomy/Heart";
 
 export default function Page() {
   return (
     <>
-     <Breadcrumb
+      <Breadcrumb
         homeElement={"Home"}
         separator={<span> / </span>}
         activeClasses="ml-2"
@@ -12,13 +13,8 @@ export default function Page() {
         listClasses="hover:underline mr-2 font-bold"
         capitalizeLinks
       />
-      <Image
-        src="/anatomical_heart.svg"
-        alt="skull"
-        width="160"
-        height="160"
-        className="text-center m-auto"
-      />
+
+      <Heart />
       <h1 className="text-4xl">&#9891;</h1>
     </>
   );

@@ -75,7 +75,7 @@ blockquote cite {
   font-weight: bold;
 }
 
-article > :first-of-type::first-letter:is(p) {
+.dropcap > p:first-of-type::first-letter {
   margin-right: 0.5rem;
   -webkit-initial-letter: 3;
   initial-letter: 3;
